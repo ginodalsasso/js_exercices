@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="carre">Texte</div>
+</body>
+
+<script>
+    const carre = document.querySelector(".carre") // séléction de la classe
+    const style = getComputedStyle(carre) // getComputedStyle donne la valeur des propriétés CSS
+
+    const classDisplay = `Class: ${carre.className}\n`   //nom de la classe "carre"
+    const backgroundColor = `Background color: ${style.backgroundColor}\n` 
+    const color = `Color: ${style.color}\n`
+    const height = `Height: ${style.height}\n`
+    const width = `Width: ${style.width}\n`
+    const display = `Display: ${style.display}\n`
+    const font = `Display: ${style.fontFamily + style.fontSize} \n`
+
+    //ouvre une boite de dialogue avec les information de la classe carre
+    carre.addEventListener("click", function(){
+        alert(classDisplay + backgroundColor + color + height + width + display + font)
+    })
+
+</script>
+</html>
