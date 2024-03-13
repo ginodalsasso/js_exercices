@@ -1,0 +1,14 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carre1, .carre2, .carre3, .carre4{
+    background-color: rgb(136, 174, 136);
+    width: 200px;
+    height: 200px;
+    color: white;
+    margin: 10px;
+
+}
