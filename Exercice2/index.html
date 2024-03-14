@@ -13,8 +13,49 @@
         <div class="carre3">3</div>
         <div class="carre4">4</div>
     </div>
-</body>
-<script>
 
-</script>
+    <script>
+        //initialisation de quatre constantes pour chaque carrés
+        const carre1 = document.querySelector(".carre1")
+        const carre2 = document.querySelector(".carre2")
+        const carre3 = document.querySelector(".carre3")
+        const carre4 = document.querySelector(".carre4")
+
+        //classe permettant d'ajouter ma classe "active" et de la désactiver
+        carre1.addEventListener("click", function(){
+            if (carre1.classList.contains('active')) { // si le carré "contient" la classe "active" alors elle sera enlévée
+                carre1.classList.remove('active')
+            } else {
+                carre1.classList.add('active')// sinon ajoute la classe "active"
+            }
+        })
+
+        carre2.addEventListener("click", function(){
+            if (carre2.classList.contains('active')) {
+                carre2.classList.remove('active')
+            } else {
+                carre2.classList.add('active')
+            }
+        })
+
+        carre3.addEventListener("click", function(){
+            if (carre3.classList.contains('active')) {
+                carre3.classList.remove('active')
+            } else {
+                carre3.classList.add('active')
+            }
+        })
+
+        carre4.addEventListener("click", function(){
+            if (carre4.classList.contains('active')) {
+                carre4.classList.remove('active')
+            } else {
+                carre4.classList.add('active')
+            }
+        })
+        
+    
+    </script>
+</body>
+
 </html>

@@ -11,12 +11,15 @@
     width: 200px;
     height: 200px;
     color: white;
-    text-align: center;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s;
+
 }
 
-.carre1-clic, .carre2-clic, .carre3-clic, .carre4-clic{
-    transform: rotate(360deg) scale(0.1);
-    background-color: red;
+.active{
+    transform: rotate(360deg) scale(0.8);
+    background-color: rgb(255, 142, 142);
 }
 
