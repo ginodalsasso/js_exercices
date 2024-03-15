@@ -6,7 +6,8 @@
 
 }
 
-.carre1, .carre2, .carre3, .carre4{
+.carre {
+    
     background-color: rgb(136, 174, 136);
     width: 200px;
     height: 200px;
@@ -15,7 +16,6 @@
     align-items: center;
     justify-content: center;
     transition: transform 1s;
-
 }
 
 .active{
