@@ -12,13 +12,13 @@ body{
 }
 
 .rond{
-    font-size: 48px;
-    color: red;
+    font-size: 56px;
+    color: rgb(255, 130, 130);
 }
 
 .croix{
-    font-size: 48px;
-    color: black;
+    font-size: 56px;
+    color: rgb(109, 109, 109);
 }
 .carre{
     height: 200px;
@@ -28,11 +28,23 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    backdrop-filter: blur(8px);
+}
+
+.bg-tour{
+    display: flex;
+    justify-content: center;
 }
 
 .tour{
-    background-color: black;
-    color: white;
-    text-align: center;
+    height: 40px;
+    width: 610px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
 }

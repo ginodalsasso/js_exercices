@@ -8,8 +8,11 @@
 </head>
 <body>
     
-<div id="wrapper"></div>
-<div class="tour"></div>
+    <div id="wrapper"></div>
+
+    <div class="bg-tour">
+        <div class="tour"></div>
+    </div>
     
 <script>
 
@@ -29,6 +32,7 @@
     const tour = document.querySelector(".tour") 
 
     joueur = 0; // initialisation d'un joueur, peut importe la valeur (en dehors de la boucle foreach)
+    count = 0 // initialisation du compteur de tours
 
     carres.forEach((carre) => { // nous ciblons la classe carré sur laquelle nous voulont la boucle
             carre.addEventListener("click", function(){
@@ -37,17 +41,22 @@
                     carre.innerText = "O";                   // alors il m'affiche "O"
                     carre.classList.add("rond");             // ajout d'une classe à carré
                     joueur = 1;                             // ici nous passons au joueur 1
-                    tour.innerText = "It's X turn"
+                    tour.innerText = "It's X turn"          //affichage du prochain joueur
+                    count++                                 //incrémente de 1 à chaque tour joué
 
                 } else if(joueur == 1 && carre.textContent == "") {
                     carre.innerText = "X";
                     carre.classList.add("croix");
                     joueur = 0;
                     tour.innerText = "It's 0 turn"
-                }    
+                    count++ 
+                } 
+                
+                if(count === 9){                    //une fois les 9 tours joués 
+                        tour.innerText = "Finish !" //alors la partie est finie
+                    }
             })
-    }) 
-
+        }) 
 </script>
 </body>
 </html>
