@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercice 4</title>
+</head>
+<body>
+    <div id="wrapper"></div>
+<script>
+        const wrapper = document.getElementById("wrapper"); // Récupère l'élément avec l'ID "wrapper"
+
+        // Crée un élément div avec la classe "carre"
+        const carre = document.createElement("div");
+        carre.classList.add("carre");
+
+        wrapper.appendChild(carre); // Ajoute l'élément div créé en tant qu'enfant de l'élément avec l'ID "wrapper"
+
+        
+        function randomColor() { // Fonction pour générer une couleur aléatoire
+            return Math.floor(Math.random() * 256); // Génère un nombre aléatoire entre 0 et 255
+        }
+
+        document.addEventListener("keydown", function(event) {
+        // Vérifie si la flèche vers le bas est enfoncée
+        if (event.key === "ArrowDown") {
+            const newCarre = carre.cloneNode(); // Clone l'élément carré
+            wrapper.appendChild(newCarre); // Ajoute le nouveau carré en tant qu'enfant de l'élément avec l'ID "wrapper"
+
+            // Définit la couleur de fond du nouveu carré avec une couleur aléatoire
+            newCarre.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
+        }
+    });
+</script>
+</body>
+</html>
