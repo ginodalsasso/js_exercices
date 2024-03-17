@@ -4,16 +4,28 @@
     padding: 0;
 }
 
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+
 #wrapper{
+    max-height: 600px;
+    max-width: 600px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    max-width: 600px;
-    max-height: 600px;
+    overflow: hidden;
 }
 
 .carre{
     height: 60px;
     width: 60px;
     background-color: black;
+    transition: 0.5s;
+}
+
+.carre:hover{
+    transform: scale(0.7);
 }

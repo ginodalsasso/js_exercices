@@ -7,7 +7,10 @@
     <title>Exercice 4</title>
 </head>
 <body>
-    <div id="wrapper"> </div>
+    
+    <div class="container">
+        <div id="wrapper"></div>
+    </div>
 <script>
         const wrapper = document.getElementById("wrapper") // Récupère l'élément avec l'ID "wrapper"
 
@@ -15,30 +18,35 @@
         const carre = document.createElement("div")
         carre.classList.add("carre")
 
-        wrapper.appendChild(carre); // Ajoute l'élément div créé en tant qu'enfant de l'élément avec l'ID "wrapper"
+        wrapper.appendChild(carre);                     // Ajoute l'élément div créé en tant qu'enfant de l'élément avec l'ID "wrapper"
 
-        
-        function randomColor() { // Fonction pour générer une couleur aléatoire
-            return Math.floor(Math.random() * 256) // Génère un nombre aléatoire entre 0 et 255
+        function randomColor() {                        // Fonction pour générer une couleur aléatoire
+            return Math.floor(Math.random() * 256)      // Génère un nombre aléatoire entre 0 et 255
         }
 
-        const boxes = document.querySelectorAll(".carre") 
 
         document.addEventListener("keydown", function(event) {
-            // Vérifie si la touche flèche est appuyée
+            // Vérifie si la touche flèche vers le bas est pressée
             if (event.key === "ArrowDown") {
-                const newCarre = carre.cloneNode() // Clone l'élément carré
-                wrapper.appendChild(newCarre) // Ajoute le nouveau carré en tant qu'enfant au "wrapper"
+                const newCarre = carre.cloneNode()                  // Clone l'élément carré
+                wrapper.appendChild(newCarre)                       // Ajoute le nouveau carré en tant qu'enfant au "wrapper"
 
                 // Définit la couleur de fond du nouveu carré avec une couleur aléatoire
                 newCarre.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`
+
+                const boxes = document.querySelectorAll(".carre")   // Selection des carrés clonés
+                boxes.forEach(box => {                              // A chaque clics, le background du carré est transformé en noir
+                    box.addEventListener("click", function() {
+                    this.style.backgroundColor = "#000";
+                    })
+                })
             }
             else if (event.key === "ArrowUp") {
                 const removeCarre = document.querySelector(".carre:last-child"); // Sélectionne le dernier carré ajouté
-                
-                removeCarre.remove()
+                removeCarre.remove()                                             // Supprime le dernier carré aujouté
             }
          })
+
 </script>
 </body>
 </html>
