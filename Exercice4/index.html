@@ -24,16 +24,17 @@
             return Math.floor(Math.random() * 256)      // Génère un nombre aléatoire entre 0 et 255
         }
 
+        count = 0 // compteur de carrés
 
         document.addEventListener("keydown", function(event) {
             // Vérifie si la touche flèche vers le bas est pressée
-            if (event.key === "ArrowDown") {
+            if (event.key === "ArrowDown" && count < 224 ) {        
                 const newCarre = carre.cloneNode()                  // Clone l'élément carré
                 wrapper.appendChild(newCarre)                       // Ajoute le nouveau carré en tant qu'enfant au "wrapper"
 
                 // Définit la couleur de fond du nouveu carré avec une couleur aléatoire
                 newCarre.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`
-
+                count++                                             // incrémente +1 carré
                 const boxes = document.querySelectorAll(".carre")   // Selection des carrés clonés
                 boxes.forEach(box => {                              // A chaque clics, le background du carré est transformé en noir
                     box.addEventListener("click", function() {
