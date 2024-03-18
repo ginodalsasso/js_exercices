@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(171, 233, 241);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+#wrapper{
+    height: 400px;
+    width: 300px;
+    background-color: rgb(255, 255, 255, 0.2);
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercice 5</title>
+</head>
+<body>
+    <div class="container">
+        <div id="wrapper">
+            <h2>Valeurs en euros</h2>
+            <input type="number" id="amount" name="amount"/>
+            <span class="conversion"></span>
+        </div>
+    </div>
+    
+</body>
+<script>
+    // Crée un élément div avec la classe "content"
+    const content = document.createElement("div")
+    content.classList.add("content")
+    wrapper.appendChild(content)                                    // Ajoute l'élément div créé en tant qu'enfant de l'élément avec l'ID "wrapper"
+
+
+    document.addEventListener("input", function(event) {            // Permettra d'afficher mon calcul de conversion dès qu'une valeure sera entrée dans l'input
+        amount = document.getElementById("amount").value 
+        let conv = Math.round(amount * 6.55957 * 100) / 100         // Math.round arrondira la valeure calculée
+        const conversion = document.querySelector(".conversion")    
+        conversion.innerText = `${conv} francs`                     // Affichage de la valeure calculée
+    })
+
+</script>
+</html>
